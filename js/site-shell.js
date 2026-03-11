@@ -39,6 +39,25 @@
         return root + item.href;
     }
 
+    function ensureHeadAssets(root) {
+        var head = document.head;
+        if (!head) {
+            return;
+        }
+
+        var faviconHref = root + "favicon.svg?v=20260311";
+        var icon = head.querySelector('link[rel="icon"]');
+
+        if (!icon) {
+            icon = document.createElement("link");
+            icon.setAttribute("rel", "icon");
+            head.appendChild(icon);
+        }
+
+        icon.setAttribute("type", "image/svg+xml");
+        icon.setAttribute("href", faviconHref);
+    }
+
     function isItemActive(item, currentPage) {
         if (!item) {
             return false;
@@ -108,7 +127,7 @@
                     classes.join(" ") +
                     '" href="' +
                     resolveHref(item, root, isHome) +
-                    "\">" +
+                    '">' +
                     escapeHtml(item.label) +
                     "</a>" +
                     "</li>"
@@ -130,17 +149,17 @@
         container.innerHTML =
             '<header class="site-header">' +
             '<div class="container">' +
-            '<nav class="navbar navbar-expand-lg site-navbar" aria-label="Navegação principal">' +
+            '<nav class="navbar navbar-expand-lg site-navbar" aria-label="Navegacao principal">' +
             '<div class="container-fluid px-0">' +
             '<a class="navbar-brand site-brand" href="' +
-            (isHome ? "#home" : root + "index.html") +
+            (root + "index.html") +
             '">' +
             '<span class="site-brand-mark">TC</span>' +
             '<span class="site-brand-copy">' +
-            '<strong>' +
+            "<strong>" +
             escapeHtml(config.brandLabel) +
             "</strong>" +
-            '<small>' +
+            "<small>" +
             escapeHtml(config.siteName) +
             "</small>" +
             "</span>" +
@@ -155,10 +174,14 @@
             '<div class="site-header-actions">' +
             '<a class="site-button site-button-secondary" href="' +
             secondaryCta +
-            '">Aula experimental</a>' +
+            '">' +
+            escapeHtml(config.ctas.secondary.label) +
+            "</a>" +
             '<a class="site-button site-button-primary" href="' +
             primaryCta +
-            '" target="_blank" rel="noopener noreferrer">WhatsApp</a>' +
+            '" target="_blank" rel="noopener noreferrer">' +
+            escapeHtml(config.ctas.primary.label) +
+            "</a>" +
             "</div>" +
             "</div>" +
             "</div>" +
@@ -167,23 +190,11 @@
             "</header>";
     }
 
-    function renderFooter(config, root, isHome) {
+    function renderFooter(config) {
         var container = document.querySelector("[data-site-footer]");
         if (!container) {
             return;
         }
-
-        var footerLinks = config.footerLinks
-            .map(function (item) {
-                return (
-                    "<li><a href=\"" +
-                    resolveHref(item, root, isHome) +
-                    '">' +
-                    escapeHtml(item.label) +
-                    "</a></li>"
-                );
-            })
-            .join("");
 
         var facts = config.quickFacts
             .map(function (item) {
@@ -194,37 +205,28 @@
         container.innerHTML =
             '<footer class="site-footer">' +
             '<div class="container">' +
-            '<div class="row g-4">' +
-            '<div class="col-lg-4">' +
-            '<p class="site-footer-eyebrow">Tai Chi Chuan São Carlos</p>' +
+            '<div class="row g-4 align-items-start">' +
+            '<div class="col-lg-5">' +
+            '<p class="site-footer-eyebrow">Tai Chi Chuan S\u00e3o Carlos</p>' +
             '<h3 class="site-footer-title">' +
             escapeHtml(config.siteSubtitle) +
             "</h3>" +
-            '<p class="site-footer-copy">Aulas ao ar livre em São Carlos, com foco em estrutura, mobilidade, equilíbrio e treino consistente.</p>' +
-            '<a class="site-button site-button-primary" href="' +
-            config.whatsappUrl +
-            '" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>' +
+            '<p class="site-footer-copy">Aulas ao ar livre em S\u00e3o Carlos, com foco em estrutura, mobilidade, equil\u00edbrio e treino consistente.</p>' +
             "</div>" +
-            '<div class="col-sm-6 col-lg-4">' +
-            '<h4 class="site-footer-heading">Rotas rápidas</h4>' +
-            '<ul class="site-footer-list">' +
-            footerLinks +
-            "</ul>" +
-            "</div>" +
-            '<div class="col-sm-6 col-lg-4">' +
-            '<h4 class="site-footer-heading">Contato e próximos passos</h4>' +
+            '<div class="col-sm-6 col-lg-3">' +
+            '<h4 class="site-footer-heading">Contato e informa\u00e7\u00f5es</h4>' +
             '<ul class="site-footer-list site-footer-list-compact">' +
-            "<li><a href=\"" +
+            '<li><a href="' +
             config.whatsappUrl +
             '" target="_blank" rel="noopener noreferrer">' +
             escapeHtml(config.whatsappLabel) +
             "</a></li>" +
-            "<li><a href=\"" +
+            '<li><a href="' +
             config.instagramUrl +
             '" target="_blank" rel="noopener noreferrer">' +
             escapeHtml(config.instagramLabel) +
             "</a></li>" +
-            "<li><a href=\"" +
+            '<li><a href="' +
             config.facebookUrl +
             '" target="_blank" rel="noopener noreferrer">' +
             escapeHtml(config.facebookLabel) +
@@ -233,16 +235,24 @@
             escapeHtml(config.pixKey) +
             "</li>" +
             "</ul>" +
+            "</div>" +
+            '<div class="col-sm-6 col-lg-4">' +
+            '<h4 class="site-footer-heading">Hor\u00e1rios e valores</h4>' +
             '<ul class="site-footer-facts">' +
             facts +
             "</ul>" +
             "</div>" +
             "</div>" +
+            '<div class="site-footer-cta-row">' +
+            '<a class="site-button site-button-primary" href="' +
+            config.whatsappUrl +
+            '" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>' +
+            "</div>" +
             '<div class="site-footer-bottom">' +
             "<span>&copy; <span data-site-year></span> " +
             escapeHtml(config.siteName) +
             ".</span>" +
-            "<span>Treino sério, conteúdo claro e rotas diretas para contato.</span>" +
+            "<span>Treino s\u00e9rio, conte\u00fado claro e professor dedicado.</span>" +
             "</div>" +
             "</div>" +
             "</footer>";
@@ -264,8 +274,9 @@
         var isHome = body.getAttribute("data-is-home") === "true";
         var currentPage = body.getAttribute("data-page") || "";
 
+        ensureHeadAssets(root);
         renderHeader(config, root, isHome, currentPage);
-        renderFooter(config, root, isHome);
+        renderFooter(config);
         body.classList.add("site-shell-ready");
     });
 })();

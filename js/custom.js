@@ -4,6 +4,8 @@ $(document).ready(function () {
         verticalCentered: false,
         scrollingSpeed: 600,
         autoScrolling: false,
+        fitToSection: false,
+        scrollBar: true,
         css3: true,
         navigation: true,
         navigationPosition: "right",

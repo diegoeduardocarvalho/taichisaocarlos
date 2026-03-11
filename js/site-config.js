@@ -1,6 +1,6 @@
 window.SITE_CONFIG = {
-    siteName: "Tai Chi Chuan São Carlos",
-    siteSubtitle: "Treino sério, saúde real e progressão guiada",
+    siteName: "Tai Chi Chuan S\u00e3o Carlos",
+    siteSubtitle: "Treino s\u00e9rio, sa\u00fade real e progress\u00e3o guiada",
     brandLabel: "Prof. Christiano",
     whatsappUrl: "https://wa.me/5516996419606",
     whatsappLabel: "(16) 99641-9606",
@@ -18,11 +18,11 @@ window.SITE_CONFIG = {
     locations: [
         {
             label: "Campo do Rui, Vila Nery",
-            schedule: "Quintas-feiras às 19:00",
+            schedule: "Quintas-feiras as 19:00",
         },
         {
-            label: "Pátio do bloco E1, EESC - USP",
-            schedule: "Domingos às 9:00",
+            label: "Patio do bloco E1, EESC - USP",
+            schedule: "Domingos as 9:00",
         },
     ],
     ctas: {
@@ -32,17 +32,17 @@ window.SITE_CONFIG = {
             type: "external",
         },
         secondary: {
-            label: "Agendar aula experimental",
-            href: "paginas/aula-experimental.html",
-            type: "page",
+            label: "Planos e pre\u00e7os",
+            href: "#portfolio",
+            type: "home-section",
         },
     },
     menu: [
         {
             key: "home",
-            label: "Início",
-            href: "#home",
-            type: "home-section",
+            label: "In\u00edcio",
+            href: "index.html",
+            type: "page",
         },
         {
             key: "artes",
@@ -64,36 +64,18 @@ window.SITE_CONFIG = {
         },
         {
             key: "saude",
-            label: "Saúde",
+            label: "D\u00favidas",
             children: [
                 {
                     key: "beneficios-e-fundamentos",
-                    label: "Benefícios e fundamentos",
+                    label: "Benef\u00edcios e fundamentos",
                     href: "paginas/beneficios-e-fundamentos.html",
                     type: "page",
                 },
                 {
                     key: "faq-qualificacao",
-                    label: "FAQ de qualificação",
+                    label: "FAQ de qualifica\u00e7\u00e3o",
                     href: "paginas/faq-qualificacao.html",
-                    type: "page",
-                },
-            ],
-        },
-        {
-            key: "treinos",
-            label: "Treinos",
-            children: [
-                {
-                    key: "metodologia",
-                    label: "Metodologia",
-                    href: "paginas/metodologia.html",
-                    type: "page",
-                },
-                {
-                    key: "aula-experimental",
-                    label: "Aula experimental",
-                    href: "paginas/aula-experimental.html",
                     type: "page",
                 },
             ],
@@ -103,16 +85,22 @@ window.SITE_CONFIG = {
             label: "Aulas",
             children: [
                 {
+                    key: "metodologia",
+                    label: "Metodologia",
+                    href: "paginas/metodologia.html",
+                    type: "page",
+                },
+                {
                     key: "aulas-e-locais",
                     label: "Aulas e locais",
                     href: "paginas/aulas-e-locais.html",
                     type: "page",
                 },
                 {
-                    key: "planos",
-                    label: "Planos e preços",
-                    href: "#portfolio",
-                    type: "home-section",
+                    key: "aula-experimental",
+                    label: "Aula experimental",
+                    href: "paginas/aula-experimental.html",
+                    type: "page",
                 },
             ],
         },
@@ -127,28 +115,6 @@ window.SITE_CONFIG = {
             label: "Contato",
             href: "#contact",
             type: "home-section",
-        },
-    ],
-    footerLinks: [
-        {
-            label: "Metodologia",
-            href: "paginas/metodologia.html",
-            type: "page",
-        },
-        {
-            label: "Aulas e locais",
-            href: "paginas/aulas-e-locais.html",
-            type: "page",
-        },
-        {
-            label: "Aula experimental",
-            href: "paginas/aula-experimental.html",
-            type: "page",
-        },
-        {
-            label: "Professor",
-            href: "paginas/prof-christiano.html",
-            type: "page",
         },
     ],
 };

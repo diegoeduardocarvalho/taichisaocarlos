@@ -91,6 +91,19 @@ a:hover { color: #ff1a35; }
   flex-wrap: wrap;
 }
 
+.hero-portrait {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 28px;
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.hero-cta-group {
+  margin-top: 8px;
+}
+
 .btn-hero-primary {
   background: transparent;
   border: 2px solid #ffffff;
@@ -488,6 +501,27 @@ a:hover { color: #ff1a35; }
 @media (max-width: 768px) {
   .page-hero h1  { font-size: 1.7rem; letter-spacing: 1px; }
   .page-hero     { padding: 56px 0 40px; }
+  .page-hero .hero-subtitle { font-size: 0.98rem; }
+  .hero-cta-group,
+  .page-hero .hero-ctas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn-hero-primary,
+  .btn-hero-secondary,
+  .btn-cta-white,
+  .btn-cta-dark {
+    max-width: 320px;
+    width: 100%;
+  }
+  body[data-page="prof-christiano"] .hero-portrait {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: min(78vw, 260px);
+    width: 100%;
+  }
 
   .page-section,
   .page-section-dark,
@@ -495,6 +529,8 @@ a:hover { color: #ff1a35; }
 
   .cta-block { padding: 44px 0; }
   .cta-block h2 { font-size: 1.4rem; }
+  .feature-card { padding: 26px 20px; }
+  .highlight-box { padding: 20px 20px; }
 
   .section-title { font-size: 1.4rem; }
 

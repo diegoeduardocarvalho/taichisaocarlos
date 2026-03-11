@@ -221,7 +221,8 @@ h5 {
     font-weight: bold;
     width: 280px;
     height: 60px;
-    margin-top: 100px;
+    margin-top: 60px;
+    margin-bottom: 36px;
     padding-top: 18px;
     transition: all 0.4s ease-in-out;
 }
@@ -312,6 +313,12 @@ h5 {
     font-weight: bold;
     float: right;
 }
+
+#about img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
 /* end about */
 
 /* start portfolio */
@@ -320,6 +327,7 @@ h5 {
     text-align: center;
 }
 #portfolio h2 {
+    margin-top: 24px;
     padding-bottom: 30px;
 }
 
@@ -380,6 +388,7 @@ h5 {
 #contact .contact-title {
     font-size: 24px;
     font-weight: bold;
+    margin-top: 24px;
     padding-bottom: 20px;
     color: #ffffff;
 }
@@ -483,3 +492,111 @@ footer hr {
 }
 
 /* end personal modifications */
+.contact-items a,
+.contact-items a:hover,
+.contact-items a:focus {
+    color: #cc001bff;
+    text-decoration: none;
+}
+
+.contact-items p {
+    border-radius: 999px;
+    padding: 2px 12px;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.contact-items p i {
+    margin-left: -12px;
+}
+
+.contact-items a:hover p,
+.contact-items a:focus p {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+.contact-equal {
+    max-width: 100%;
+}
+
+.contact-items {
+    flex-wrap: wrap;
+}
+
+@media (max-width: 767.98px) {
+    #home {
+        padding-bottom: 96px;
+    }
+
+    #home h1 {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+        padding: 18px 20px;
+    }
+
+    #home h2 {
+        font-size: 1.6rem;
+    }
+
+    #home .btn,
+    #contact .btn,
+    #work a.btn-primary {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    #work .media {
+        margin-top: 20px;
+    }
+
+    #work .media .fa {
+        margin-right: 16px;
+    }
+
+    #portfolio .pricing-body {
+        padding: 28px 22px;
+    }
+
+    #portfolio .pricing-title-wrap {
+        padding: 18px 22px;
+    }
+
+    #about .row {
+        row-gap: 24px;
+    }
+
+    #about img {
+        margin: 0 auto;
+        max-width: min(78vw, 260px);
+        width: 100%;
+    }
+
+    #contact .contact-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    #contact .contact-items a {
+        max-width: 100%;
+    }
+
+    #contact .contact-items p {
+        font-size: 0.95rem;
+        white-space: normal;
+    }
+
+    #contact .fa,
+    .fa-brands {
+        margin-right: 12px;
+    }
+
+    #contact iframe {
+        display: block;
+        height: 260px;
+        margin-bottom: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+}
