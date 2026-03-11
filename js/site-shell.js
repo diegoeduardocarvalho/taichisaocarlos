@@ -130,7 +130,7 @@
         container.innerHTML =
             '<header class="site-header">' +
             '<div class="container">' +
-            '<nav class="navbar navbar-expand-lg site-navbar" aria-label="Navegacao principal">' +
+            '<nav class="navbar navbar-expand-lg site-navbar" aria-label="Navegação principal">' +
             '<div class="container-fluid px-0">' +
             '<a class="navbar-brand site-brand" href="' +
             (isHome ? "#home" : root + "index.html") +
@@ -196,23 +196,23 @@
             '<div class="container">' +
             '<div class="row g-4">' +
             '<div class="col-lg-4">' +
-            '<p class="site-footer-eyebrow">Tai Chi Chuan Sao Carlos</p>' +
+            '<p class="site-footer-eyebrow">Tai Chi Chuan São Carlos</p>' +
             '<h3 class="site-footer-title">' +
             escapeHtml(config.siteSubtitle) +
             "</h3>" +
-            '<p class="site-footer-copy">Aulas ao ar livre em Sao Carlos, com foco em estrutura, mobilidade, equilibrio e treino consistente.</p>' +
+            '<p class="site-footer-copy">Aulas ao ar livre em São Carlos, com foco em estrutura, mobilidade, equilíbrio e treino consistente.</p>' +
             '<a class="site-button site-button-primary" href="' +
             config.whatsappUrl +
             '" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>' +
             "</div>" +
             '<div class="col-sm-6 col-lg-4">' +
-            '<h4 class="site-footer-heading">Rotas rapidas</h4>' +
+            '<h4 class="site-footer-heading">Rotas rápidas</h4>' +
             '<ul class="site-footer-list">' +
             footerLinks +
             "</ul>" +
             "</div>" +
             '<div class="col-sm-6 col-lg-4">' +
-            '<h4 class="site-footer-heading">Contato e proximos passos</h4>' +
+            '<h4 class="site-footer-heading">Contato e próximos passos</h4>' +
             '<ul class="site-footer-list site-footer-list-compact">' +
             "<li><a href=\"" +
             config.whatsappUrl +
@@ -242,7 +242,7 @@
             "<span>&copy; <span data-site-year></span> " +
             escapeHtml(config.siteName) +
             ".</span>" +
-            "<span>Treino serio, conteudo claro e rotas diretas para contato.</span>" +
+            "<span>Treino sério, conteúdo claro e rotas diretas para contato.</span>" +
             "</div>" +
             "</div>" +
             "</footer>";

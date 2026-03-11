@@ -137,6 +137,10 @@ body.site-shell-ready {
     gap: 12px;
 }
 
+/* ============================================================
+   BOTÕES SITE-SHELL (navbar CTAs e about-actions)
+   ============================================================ */
+
 .site-button {
     align-items: center;
     border-radius: 999px;
@@ -162,13 +166,14 @@ body.site-shell-ready {
     background: var(--site-accent);
     border: 1px solid transparent;
     color: #ffffff;
-    box-shadow: 0 18px 34px rgba(204, 0, 27, 0.28);
+    box-shadow: 0 8px 28px rgba(204, 0, 27, 0.55), 0 0 0 0 rgba(204, 0, 27, 0);
 }
 
 .site-button-primary:hover,
 .site-button-primary:focus {
     background: #ffffff;
     color: var(--site-accent);
+    box-shadow: 0 8px 32px rgba(204, 0, 27, 0.75), 0 0 18px rgba(204, 0, 27, 0.4);
 }
 
 .site-button-secondary {
@@ -183,12 +188,106 @@ body.site-shell-ready {
     color: #ffffff;
 }
 
+/* ============================================================
+   GLOW NOS BOTÕES CTA DA HOME
+   ============================================================ */
+
+#home .btn,
+#contact .btn {
+    box-shadow: 0 8px 28px rgba(204, 0, 27, 0.55);
+    transition: all 0.3s ease;
+}
+
+#home .btn:hover,
+#contact .btn:hover {
+    box-shadow: 0 8px 36px rgba(204, 0, 27, 0.8), 0 0 20px rgba(204, 0, 27, 0.4);
+    transform: translateY(-2px);
+}
+
+#work a.btn-primary {
+    background: #cc001b;
+    border: 2px solid transparent;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 8px 28px rgba(204, 0, 27, 0.55);
+    transition: all 0.3s ease;
+}
+
+#work a.btn-primary:hover {
+    background: transparent;
+    border-color: #cc001b;
+    color: #cc001b;
+    box-shadow: 0 8px 36px rgba(204, 0, 27, 0.8), 0 0 20px rgba(204, 0, 27, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Botões dos cards (#work) via classe do codex */
+#work .home-card-button {
+    align-items: center;
+    background: var(--site-accent);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    color: #ffffff;
+    display: inline-flex;
+    font-weight: 700;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    min-height: 50px;
+    padding: 0 22px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 28px rgba(204, 0, 27, 0.55);
+}
+
+#work .home-card-button:hover,
+#work .home-card-button:focus {
+    background: #ffffff;
+    color: var(--site-accent);
+    text-decoration: none;
+    box-shadow: 0 8px 36px rgba(204, 0, 27, 0.8), 0 0 20px rgba(204, 0, 27, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   ABOUT – ações
+   ============================================================ */
+
+#about .about-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* ============================================================
+   WORK – cards
+   ============================================================ */
+
+#work .work-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================================
+   HOME – padding para compensar navbar fixa
+   ============================================================ */
+
+body.site-home #home {
+    padding-top: 180px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
 .site-footer {
     background:
         radial-gradient(circle at top left, rgba(204, 0, 27, 0.22), transparent 34%),
         linear-gradient(180deg, #040404 0%, #0d0d0d 100%);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin-top: 80px;
     padding: 80px 0 30px;
 }
 
@@ -273,47 +372,9 @@ body.site-shell-ready {
     padding-top: 24px;
 }
 
-#work .work-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
-}
-
-#work .home-card-button {
-    align-items: center;
-    background: var(--site-accent);
-    border: 1px solid transparent;
-    border-radius: 999px;
-    color: #ffffff;
-    display: inline-flex;
-    font-weight: 700;
-    justify-content: center;
-    letter-spacing: 0.04em;
-    min-height: 50px;
-    padding: 0 22px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.25s ease;
-}
-
-#work .home-card-button:hover,
-#work .home-card-button:focus {
-    background: #ffffff;
-    color: var(--site-accent);
-    text-decoration: none;
-}
-
-#about .about-actions {
-    display: flex;
-    gap: 14px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-body.site-home #home {
-    padding-top: 180px;
-}
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 
 @media (max-width: 991.98px) {
     body.site-shell-ready {

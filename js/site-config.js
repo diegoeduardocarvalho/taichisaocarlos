@@ -1,6 +1,6 @@
 window.SITE_CONFIG = {
-    siteName: "Tai Chi Chuan Sao Carlos",
-    siteSubtitle: "Treino serio, saude real e progressao guiada",
+    siteName: "Tai Chi Chuan São Carlos",
+    siteSubtitle: "Treino sério, saúde real e progressão guiada",
     brandLabel: "Prof. Christiano",
     whatsappUrl: "https://wa.me/5516996419606",
     whatsappLabel: "(16) 99641-9606",
@@ -18,11 +18,11 @@ window.SITE_CONFIG = {
     locations: [
         {
             label: "Campo do Rui, Vila Nery",
-            schedule: "Quintas-feiras as 19:00",
+            schedule: "Quintas-feiras às 19:00",
         },
         {
-            label: "Patio do bloco E1, EESC - USP",
-            schedule: "Domingos as 9:00",
+            label: "Pátio do bloco E1, EESC - USP",
+            schedule: "Domingos às 9:00",
         },
     ],
     ctas: {
@@ -40,7 +40,7 @@ window.SITE_CONFIG = {
     menu: [
         {
             key: "home",
-            label: "Inicio",
+            label: "Início",
             href: "#home",
             type: "home-section",
         },
@@ -64,17 +64,17 @@ window.SITE_CONFIG = {
         },
         {
             key: "saude",
-            label: "Saude",
+            label: "Saúde",
             children: [
                 {
                     key: "beneficios-e-fundamentos",
-                    label: "Beneficios e fundamentos",
+                    label: "Benefícios e fundamentos",
                     href: "paginas/beneficios-e-fundamentos.html",
                     type: "page",
                 },
                 {
                     key: "faq-qualificacao",
-                    label: "FAQ de qualificacao",
+                    label: "FAQ de qualificação",
                     href: "paginas/faq-qualificacao.html",
                     type: "page",
                 },
@@ -110,7 +110,7 @@ window.SITE_CONFIG = {
                 },
                 {
                     key: "planos",
-                    label: "Planos e precos",
+                    label: "Planos e preços",
                     href: "#portfolio",
                     type: "home-section",
                 },
